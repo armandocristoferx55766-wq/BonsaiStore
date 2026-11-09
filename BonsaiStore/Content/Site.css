@@ -1,0 +1,715 @@
+﻿
+/* Cai dat chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8faf7;
+    color: #26352a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Thanh dieu huong */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #245c36;
+    white-space: nowrap;
+}
+
+    .logo span {
+        color: #80a65a;
+    }
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+    .nav-menu a {
+        font-size: 15px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+        .nav-menu a:hover {
+            color: #6b9b4b;
+        }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.cart-link {
+    color: #245c36;
+    font-weight: 600;
+}
+
+.login-link {
+    background-color: #245c36;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .login-link:hover {
+        background-color: #397b4d;
+    }
+
+/* Noi dung chinh */
+.main-content {
+    min-height: 500px;
+    padding: 30px 0;
+}
+
+/* Chan trang */
+.footer {
+    background-color: #193d29;
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 45px 0;
+}
+
+.footer h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #d1dfd4;
+    margin-bottom: 5px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    color: #c4d4c8;
+    font-size: 14px;
+}
+
+/* Responsive cho dien thoai */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-menu {
+        gap: 10px;
+    }
+
+        .nav-menu a {
+            font-size: 13px;
+        }
+
+    .logo {
+        font-size: 23px;
+    }
+}
+
+
+/* Banner trang chu */
+.hero {
+    min-height: 480px;
+    background: linear-gradient(90deg, rgba(15, 48, 27, 0.9), rgba(15, 48, 27, 0.2)), url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    border-radius: 0 0 18px 18px;
+}
+
+.hero-content {
+    max-width: 600px;
+    color: white;
+}
+
+.hero-subtitle,
+.section-heading span,
+.about-content > span {
+    color: #83b66b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #e1e9df;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #79a95c;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .btn-primary:hover {
+        background: #5e8c43;
+        transform: translateY(-3px);
+    }
+
+/* Tieu de cac khu vuc */
+.category-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 32px;
+        color: #245c36;
+        margin: 10px 0;
+    }
+
+    .section-heading p {
+        color: #78847a;
+    }
+
+/* Danh muc san pham */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.category-card {
+    background: white;
+    padding: 30px 18px;
+    border-radius: 12px;
+    border: 1px solid #edf0eb;
+    text-align: center;
+    transition: 0.3s;
+}
+
+    .category-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 10px 25px rgba(36, 92, 54, 0.1);
+        border-color: #9dbd88;
+    }
+
+.category-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #edf5e9;
+    color: #397b4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.category-card h3 {
+    font-size: 17px;
+    color: #245c36;
+    margin-bottom: 8px;
+}
+
+.category-card p {
+    font-size: 13px;
+    color: #78847a;
+}
+
+/* San pham noi bat */
+.featured-section {
+    background: #eef4eb;
+    padding: 75px 0;
+}
+
+.product-placeholder {
+    background: white;
+    min-height: 180px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #849184;
+    border: 1px dashed #b9cbb1;
+}
+
+/* Gioi thieu */
+.about-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+    .about-content p {
+        color: #78847a;
+        margin-top: 15px;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+/* Responsive trang chu */
+@media (max-width: 900px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 35px 7%;
+    }
+
+        .hero h1 {
+            font-size: 34px;
+        }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 26px;
+    }
+}
+
+/* Danh sach san pham */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #edf0eb;
+    transition: all 0.3s ease;
+}
+
+    .product-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 30px rgba(36, 92, 54, 0.12);
+    }
+
+.product-image {
+    width: 100%;
+    height: 230px;
+    background: #edf4e9;
+    overflow: hidden;
+}
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-category {
+    display: inline-block;
+    color: #6b9652;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-info h3 {
+    color: #245c36;
+    font-size: 17px;
+    margin-bottom: 12px;
+    min-height: 45px;
+}
+
+.product-price {
+    color: #d47b35;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.product-stock {
+    color: #849184;
+    font-size: 13px;
+}
+
+/* Responsive san pham */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 250px;
+    }
+}
+/* PRODUCT DETAIL */
+
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    align-items: center;
+}
+
+.detail-image {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #f5f7f2;
+}
+
+    .detail-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.detail-info {
+    padding: 20px 0;
+}
+
+    .detail-info h1 {
+        font-size: 36px;
+        color: #243b2a;
+        margin: 15px 0;
+    }
+
+    .detail-info .product-price {
+        font-size: 28px;
+        font-weight: 700;
+        color: #648c4b;
+        margin: 20px 0;
+    }
+
+    .detail-info p {
+        line-height: 1.8;
+        color: #666;
+    }
+
+.btn-add-cart {
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: #648c4b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .btn-add-cart:hover {
+        background: #456b35;
+    }
+
+@media (max-width: 768px) {
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .detail-image {
+        height: 350px;
+    }
+
+    .detail-info h1 {
+        font-size: 28px;
+    }
+}
+/* CART PAGE */
+
+.cart-section {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+    .cart-section h1 {
+        font-size: 32px;
+        color: #243b2a;
+        margin-bottom: 30px;
+    }
+
+.cart-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.cart-items {
+    overflow-x: auto;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+    .cart-table th,
+    .cart-table td {
+        padding: 18px 15px;
+        text-align: left;
+        border-bottom: 1px solid #e8eee5;
+    }
+
+    .cart-table th {
+        color: #456b35;
+        background: #f5f8f2;
+    }
+
+.cart-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 180px;
+}
+
+    .cart-product img {
+        width: 65px;
+        height: 65px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .cart-product span {
+        font-weight: 600;
+        color: #243b2a;
+    }
+
+.cart-summary {
+    background: #f5f8f2;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+    .cart-summary h2 {
+        color: #243b2a;
+        margin-bottom: 20px;
+    }
+
+    .cart-summary p {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .cart-summary input {
+        width: 100%;
+        margin-top: 20px;
+        padding: 14px;
+        background: #648c4b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+        .cart-summary input:hover {
+            background: #456b35;
+        }
+
+@media (max-width: 768px) {
+    .cart-content {
+        grid-template-columns: 1fr;
+    }
+}
+/* REGISTER PAGE */
+
+.register-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.register-box {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+.register-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .register-heading span {
+        color: #648c4b;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .register-heading h1 {
+        color: #243b2a;
+        font-size: 30px;
+        margin: 12px 0;
+    }
+
+    .register-heading p {
+        color: #777;
+    }
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+    .register-form label {
+        margin: 15px 0 8px;
+        color: #243b2a;
+        font-weight: 600;
+    }
+
+    .register-form input[type="text"],
+    .register-form input[type="email"],
+    .register-form input[type="password"] {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #dce5d7;
+        border-radius: 8px;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    .register-form input:focus {
+        border-color: #648c4b;
+    }
+
+.btn-register {
+    margin-top: 25px;
+    padding: 14px;
+    background: #648c4b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .btn-register:hover {
+        background: #456b35;
+    }
+
+.register-login {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+    .register-login a {
+        color: #648c4b;
+        font-weight: 600;
+        text-decoration: none;
+    }

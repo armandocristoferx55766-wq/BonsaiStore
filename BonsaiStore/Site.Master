@@ -1,0 +1,85 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="BonsaiStore.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BonsaiStore - Cửa hàng cây cảnh</title>
+
+    <link href="Content/Site.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <header class="header">
+            <div class="container navbar">
+
+                <a href="Default.aspx" class="logo">
+                    Bonsai<span>Store</span>
+                </a>
+
+                <nav class="nav-menu">
+                    <a href="Default.aspx">Trang chủ</a>
+                    <a href="#">Bonsai</a>
+                    <a href="#">Hoa</a>
+                    <a href="#">Dụng cụ</a>
+                    <a href="#">Chậu</a>
+                    <a href="#">Phân bón</a>
+                </nav>
+
+                
+                <div class="nav-actions">
+
+                    <a href="Cart.aspx" class="cart-link">Giỏ hàng</a>
+
+                    <asp:PlaceHolder ID="phGuest" runat="server">
+                        <a href="Login.aspx" class="login-link">Đăng nhập</a>
+                        <a href="Register.aspx" class="login-link">Đăng ký</a>
+                    </asp:PlaceHolder>
+
+                    <asp:PlaceHolder ID="phUser" runat="server" Visible="false">
+                        <asp:Label ID="lblWelcome" runat="server"
+                            CssClass="login-link"></asp:Label>
+
+                        <a href="Logout.aspx" class="login-link">Đăng xuất</a>
+                    </asp:PlaceHolder>
+
+                </div>
+
+
+            </div>
+        </header>
+
+        <main class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer-content">
+                <div>
+                    <h3>BonsaiStore</h3>
+                    <p>Không gian xanh bắt đầu từ những điều nhỏ nhất.</p>
+                </div>
+
+                <div>
+                    <h4>Liên hệ</h4>
+                    <p>Email: support@bonsaistore.com</p>
+                    <p>Hotline: 0123 456 789</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2026 BonsaiStore. All rights reserved.
+            </div>
+        </footer>
+
+    </form>
+</body>
+</html>
